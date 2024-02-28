@@ -3,14 +3,9 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "engines":{
-    "node":"18.x"
-  },
   "scripts": {
-    "start": "node /apiindex.js",
-    "dev": "nodemon api/index.js --watch",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "tsc"
+    "dev": "nodemon index.js --watch",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "",
