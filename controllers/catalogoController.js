@@ -1,4 +1,4 @@
-const { Catalogo: CatalogoModel } = require("../../API/models/catalogoModel");
+const { Catalogo: CatalogoModel } = require("../models/catalogoModel");
 const mongoose = require('mongoose');
 const { Schema } = mongoose;
 
