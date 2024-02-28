@@ -1,4 +1,4 @@
-require("dotenv").config("./.env.");
+require("dotenv").config("../.env.");
 const PORT = process.env.REACT_APP_PORT;
 const express = require("express");
 const app = express();
@@ -9,7 +9,7 @@ app.use(cors());
 
 //API ROUTES
 //Projects
-const Routes = require("./routes/router");
+const Routes = require("../routes/router");
 app.use("/api", Routes);
 
 //DB CONNECTION
