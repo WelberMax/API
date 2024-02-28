@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-require("dotenv").config("../.env.");
+require("dotenv").config("./.env.");
 
 const dbUser = process.env.REACT_APP_DB_USER;
 const dbPass = process.env.REACT_APP_DB_PASS;
