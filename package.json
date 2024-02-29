@@ -5,9 +5,9 @@
   "main": "index.js",
   "scripts": {
     "start":"node index.js",
-    "buid": "npm run build",
     "dev": "nodemon index.js --watch",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "vercel-build":"echo Hello this is the wManager API"
   },
   "keywords": [],
   "author": "",
