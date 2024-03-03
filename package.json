@@ -4,10 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start":"node index.js",
+    "start": "node index.js",
     "dev": "nodemon index.js --watch",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "vercel-build":"echo Hello this is the wManager API"
+    "vercel-build": "echo Hello this is the wManager API"
   },
   "keywords": [],
   "author": "",
@@ -17,7 +17,8 @@
     "dotenv": "^16.4.5",
     "express": "^4.18.2",
     "mongodb": "^6.3.0",
-    "mongoose": "^8.2.0"
+    "mongoose": "^8.2.0",
+    "valid-url": "^1.0.9"
   },
   "devDependencies": {
     "nodemon": "^3.1.0"
