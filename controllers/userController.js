@@ -31,6 +31,14 @@ const userController = {
             res.status(500).json({ error: error });
         }
     },
+    getUserId: async (req, res) => {
+        try {
+            const user = await UserModel.findById(req.params.id);
+            res.status(200).json(user);
+        }catch (error) {
+            res.status(500).json({ error: error });
+        }
+    },
     login: async (req, res) => {
         try {
             const { email, password } = req.body
