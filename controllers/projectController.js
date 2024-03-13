@@ -9,6 +9,14 @@ const projectController = {
       res.status(500).json({ error: error });
     }
   },
+  getOne: async (req, res) => {
+    try {
+      const project = await ProjectModel.findById(req.params.id);
+      res.status(200).json(project);
+    }catch(error){
+        res.status(500).json({ error: error });
+    }
+  },
   create: async (req, res) => {
     try {
       const project = {
