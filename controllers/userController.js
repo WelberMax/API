@@ -4,17 +4,28 @@ const userController = {
     create: async (req, res) => {  
               
         try {
-            const newUser = {
-                id: req.body.id,
-                name: req.body.name,
-                email: req.body.email,
-                password: req.body.password                
-            }
-            if (!newUser.name ||!newUser.email ||!newUser.password) {
+            const { name, email, password, confirmPassword } = req.body;                          
+            
+            if (!name ||!email ||!password) {
                 return res.status(400).json({ message: "Preencha todos os campos!" });
             }
-           
-
+            if(password !== confirmPassword){
+                return res.status(400).json({ message: "As senhas precisam ser iguais!" });
+            }
+            
+            //verificar se o email existe
+            const userExists = await UserModel.findOne({ email: email });
+            if (userExists) {
+                return res.status(400).json({ message: "Email ja existe!" });
+            }
+            
+            const newUser = new UserModel({ 
+                    name,
+                    email,
+                    password
+                 });
+            
+            //criar o novo user
             const response = await UserModel.create(newUser)            
             //atencao retornando response
             res.status(201).json({ response, message: "Usuário criado com sucesso!" });

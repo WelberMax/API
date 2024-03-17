@@ -9,7 +9,7 @@ app.use(express.json());
 app.use(cors());
 
 //API ROUTES
-//Projects
+//Wmanager
 const Routes = require("./routes/router");
 app.use("/api", Routes);
 
