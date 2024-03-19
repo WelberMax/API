@@ -1,6 +1,7 @@
 const mongoose = require("mongoose");
 const { Schema } = mongoose;
 const { categorySchema } = require("./categoryModel");
+const { serviceSchema } = require("./serviceModel");
 
 const projectSchema = new Schema(
   {
@@ -16,6 +17,15 @@ const projectSchema = new Schema(
     category: {
       type: [categorySchema],
     },
+    cost: {
+      type: Number,
+      default: 0,
+    },
+
+    services: {
+      type: [serviceSchema],
+    },
+
   },
 
   { timestamps: true }

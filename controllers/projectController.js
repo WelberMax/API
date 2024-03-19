@@ -42,7 +42,28 @@ const projectController = {
     } catch (error) {
       res.status(500).json({ error: error });
     }
-  }
+  },
+  update: async (req, res) => {
+    try {
+      const project = {
+        name: req.body.name,
+        budget: req.body.budget,
+        category: req.body.category,
+        services: req.body.services
+
+      };
+      const response = await ProjectModel.findByIdAndUpdate(
+        req.params.id,
+        project,
+        { new: true }
+      );
+      res
+        .status(200)
+        .json({ response, message: "Projeto atualizado com sucesso" });
+    } catch (error) {
+      res.status(500).json({ error: error });
+    }
+  },
 };
 
 module.exports = projectController;
