@@ -7,7 +7,7 @@ const serviceSchema = new Schema(
           type: String,
         },
         cost: {
-          type: String,
+          type: Number,
         },
         description: {
           type: String,

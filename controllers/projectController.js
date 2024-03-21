@@ -49,7 +49,8 @@ const projectController = {
         name: req.body.name,
         budget: req.body.budget,
         category: req.body.category,
-        services: req.body.services
+        services: req.body.services,
+        cost: req.body.cost
 
       };
       const response = await ProjectModel.findByIdAndUpdate(
